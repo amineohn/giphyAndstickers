@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./main.css";
 import Home from "./pages/Home";
+import Gifs from "./pages/Gifs";
 import Stickers from "./pages/Stickers";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -11,6 +12,7 @@ ReactDOM.render(
     <Router>
       <Switch>
         <Route path="/" exact component={Home} />
+        <Route path="/gifs" exact component={Gifs} />
         <Route path="/stickers" exact component={Stickers} />
       </Switch>
     </Router>
