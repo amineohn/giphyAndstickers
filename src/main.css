@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-200;
+}
+.reactGiphySearchbox-poweredByGiphy {
+  display: none;
+}
+.reactGiphySearchbox-searchForm-input {
+  @apply border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none !important;
+}
+.reactGiphySearchbox-image {
+  @apply rounded-lg;
+}
+.reactGiphySearchbox-imageButton {
+  @apply bg-transparent	!important;
+}
+.reactGiphySearchbox-message {
+  @apply bg-red-300 rounded text-white text-center p-2;
+  -webkit-animation: scaleUpDown .5s ease both;
+	animation: scaleUpDown .5s ease both;
+}
+.scaleUpDown {
+	-webkit-animation: scaleUpDown .5s ease both;
+	animation: scaleUpDown .5s ease both;
+}
+@-webkit-keyframes scaleUpDown {
+	from { opacity: 0; -webkit-transform: scale(1.2); }
+}
+@keyframes scaleUpDown {
+	from { opacity: 0; -webkit-transform: scale(1.2); transform: scale(1.2); }
+}

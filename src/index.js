@@ -1,14 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./main.css";
+import Home from "./pages/Home";
+import Stickers from "./pages/Stickers";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/stickers" exact component={Stickers} />
+      </Switch>
+    </Router>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
