@@ -7,7 +7,7 @@ export default function Navigation() {
         <ul class="flex">
           <li class="mr-3">
             <Link
-              class="inline-block border rounded hover:text-gray-100 text-gray-700 hover:bg-red-300 py-1 px-3 transition duration-150"
+              class="inline-block rounded hover:text-gray-100 text-gray-700 hover:bg-red-400 py-1 px-3 transition duration-150"
               to="/"
             >
               Gif
@@ -15,7 +15,7 @@ export default function Navigation() {
           </li>
           <li class="mr-3">
             <Link
-              class="inline-block border rounded hover:text-gray-100 text-gray-700 hover:bg-red-300 py-1 px-3 transition duration-150"
+              class="inline-block rounded hover:text-gray-100 text-gray-700 hover:bg-red-400 py-1 px-3 transition duration-150"
               to="/stickers"
             >
               Stickers

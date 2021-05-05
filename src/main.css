@@ -9,10 +9,13 @@ body {
   display: none;
 }
 .reactGiphySearchbox-searchForm-input {
-  @apply border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none !important;
+  @apply border-2 border-gray-300 hover:border-red-400 focus:border-red-400 transition duration-150 transform hover:scale-110 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none !important;
 }
 .reactGiphySearchbox-image {
-  @apply rounded-lg;
+  @apply transform hover:scale-110 rounded-lg;
+}
+img {
+  @apply transition duration-150 transform hover:scale-110;
 }
 .reactGiphySearchbox-imageButton {
   @apply bg-transparent	!important;
