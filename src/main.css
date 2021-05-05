@@ -22,6 +22,18 @@ body {
 }
 img {
   @apply transition duration-150 transform hover:scale-110;
+  border: 0;
+  text-decoration: none;
+  outline: none;
+}
+img,
+a {
+  border: none;
+  outline: none;
+}
+
+img::selection {
+  background: transparent;
 }
 .reactGiphySearchbox-imageButton {
   @apply bg-transparent	!important;
