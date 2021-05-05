@@ -11,7 +11,13 @@ function Home() {
             onSelect={(item) => console.log(item)}
             masonryConfig={[
               { columns: 2, imageWidth: 110, gutter: 5 },
-              { mq: "700px", columns: 3, imageWidth: 110, gutter: 5, imageRenditionFileType: 'gif' },
+              {
+                mq: "700px",
+                columns: 3,
+                imageWidth: 110,
+                gutter: 5,
+                imageRenditionFileType: "gif",
+              },
             ]}
           />
         </div>
