@@ -3,9 +3,9 @@ import Navigation from "../components/Navigation";
 function Stickers() {
   return (
     <>
-      <div class="pt-2 relative mx-auto text-gray-600 flex justify-center h-screen items-center flex-col">
+      <div className="pt-2 relative mx-auto text-gray-600 flex justify-center h-screen items-center flex-col">
         <Navigation />
-        <div class="scaleUpDown">
+        <div className="scaleUpDown">
           <ReactGiphySearchBox
             apiKey="LYA2jGDHvyIkbB8KmweTmjlBbQhsX5Dw"
             onSelect={(item) => console.log(item)}
