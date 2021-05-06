@@ -4,9 +4,11 @@ import useDarkMode from "../hooks/useDarkMode";
 import useSound from 'use-sound';
 import off from '../assets/sounds/switch-off.mp3';
 import on from '../assets/sounds/switch-on.mp3';
+import nav from '../assets/sounds/navigate.mp3';
 export default function Navigation() {
   const [colorTheme, setTheme] = useDarkMode();
   const [offSong] = useSound(off);
+  const [navigation] = useSound(nav);
   const [onSong] = useSound(on);
   return (
     <>
@@ -16,6 +18,7 @@ export default function Navigation() {
             <Link
               className="inline-flex rounded-full hover:text-gray-100 text-gray-700 dark:text-white transform hover:scale-110 py-1 px-3 transition duration-150 font-normal"
               to="/"
+              onClick={navigation}
             >
               <svg
                 width="30"
@@ -42,6 +45,7 @@ export default function Navigation() {
             <Link
               className="inline-flex rounded-full hover:text-gray-100 text-gray-700 dark:text-white dark:hover:bg-blue-300 hover:bg-red-400 py-1 px-3 transition duration-150 font-normal"
               to="/gifs"
+              onClick={navigation}
             >
               <svg
                 width="30"
@@ -83,6 +87,7 @@ export default function Navigation() {
             <Link
               className="inline-flex rounded-full hover:text-gray-100 text-gray-700 dark:text-white dark:hover:bg-blue-300 hover:bg-red-400 py-1 px-3 transition duration-150 font-normal"
               to="/stickers"
+              onClick={navigation}
             >
               <svg
                 width="30"
