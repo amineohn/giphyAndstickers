@@ -1,6 +1,6 @@
 import ReactGiphySearchBox from "react-giphy-searchbox";
 import Navigation from "../components/Navigation";
-function Stickers() {
+export default function Stickers() {
   return (
     <>
       <div className="pt-2 relative mx-auto text-gray-600 flex justify-center h-screen items-center flex-col">
@@ -21,5 +21,3 @@ function Stickers() {
     </>
   );
 }
-
-export default Stickers;
