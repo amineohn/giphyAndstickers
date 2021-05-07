@@ -43,7 +43,7 @@ export default function Navigation() {
           </li>
           <li className="mr-3">
             <Link
-              className="inline-flex rounded-full hover:text-gray-100 text-gray-700 dark:text-white dark:hover:bg-blue-300 hover:bg-red-400 py-1 px-3 transition duration-150 font-normal"
+              className="inline-flex rounded-full hover:text-gray-100 text-gray-700 dark:text-white dark:hover:bg-blue-300 hover:bg-green-400 py-1 px-3 transition duration-150 font-normal"
               to="/gifs"
               onClick={navigation}
             >
@@ -85,7 +85,7 @@ export default function Navigation() {
           </li>
           <li className="mr-3">
             <Link
-              className="inline-flex rounded-full hover:text-gray-100 text-gray-700 dark:text-white dark:hover:bg-blue-300 hover:bg-red-400 py-1 px-3 transition duration-150 font-normal"
+              className="inline-flex rounded-full hover:text-gray-100 text-gray-700 dark:text-white dark:hover:bg-blue-300 hover:bg-green-400 py-1 px-3 transition duration-150 font-normal"
               to="/stickers"
               onClick={navigation}
             >
