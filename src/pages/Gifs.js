@@ -10,7 +10,6 @@ export default function Home() {
             messageNoMatches="No matches found."
             imageRenditionName="original"
             apiKey="LYA2jGDHvyIkbB8KmweTmjlBbQhsX5Dw"
-            onSelect={(item) => console.log(item)}
             masonryConfig={[
               { columns: 2, imageWidth: 110, gutter: 5 },
               {
