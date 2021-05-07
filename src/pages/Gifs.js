@@ -7,6 +7,8 @@ export default function Home() {
         <Navigation />
         <div className="scaleUpDown">
           <ReactGiphySearchBox
+            messageNoMatches="No matches found."
+            imageRenditionName="original"
             apiKey="LYA2jGDHvyIkbB8KmweTmjlBbQhsX5Dw"
             onSelect={(item) => console.log(item)}
             masonryConfig={[
@@ -15,8 +17,7 @@ export default function Home() {
                 mq: "700px",
                 columns: 3,
                 imageWidth: 110,
-                gutter: 5,
-                imageRenditionFileType: "gif",
+                gutter: 5
               },
             ]}
           />
