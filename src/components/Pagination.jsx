@@ -18,8 +18,8 @@ const Paginate = props => {
                         }
                         return (
                             <>
-                                <div onClick={() => props.pageSelected(number)} class="h-8 w-8 ml-1 flex justify-center items-center rounded-full bg-purple-200 dark:bg-gray-800 cursor-pointer">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right w-4 h-4 text-white bg-purple-300 dark:bg-gray-700 rounded-full">
+                                <div onClick={() => props.pageSelected(number)} class="h-8 w-8 flex justify-center items-center rounded bg-purple-200 dark:bg-gray-800 cursor-pointer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right w-4 h-4 text-white bg-purple-300 dark:bg-gray-700 rounded">
                                         <polyline points="9 18 15 12 9 6"></polyline>
                                     </svg>
                                 </div>
