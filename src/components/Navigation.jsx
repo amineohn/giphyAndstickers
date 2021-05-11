@@ -12,8 +12,8 @@ export default function Navigation() {
   const [onSong] = useSound(on);
   return (
     <>
-      <div className="pb-4">
-        <ul className="flex">
+      <div className="pb-4 inline-flex justify-end items-center flex-col fixed mt-80 px-4">
+        <ul className="inline-block">
           <li className="mr-3">
             <Link
               className="inline-flex rounded-full hover:text-gray-100 text-gray-700 dark:text-white transform hover:scale-110 py-1 px-3 transition duration-150 font-normal"
@@ -43,7 +43,7 @@ export default function Navigation() {
           </li>
           <li className="mr-3">
             <Link
-              className="inline-flex rounded-full hover:text-gray-100 text-gray-700 dark:text-white dark:hover:bg-blue-300 hover:bg-purple-300 py-1 px-3 transition duration-150 font-normal hover:ring-4 focus:ring-4"
+              className="inline-flex rounded-full hover:text-gray-100 text-gray-700 dark:text-white transform hover:scale-110 py-1 px-3 transition duration-150 font-normal"
               to="/gifs"
               onClick={navigation}
             >
@@ -82,12 +82,12 @@ export default function Navigation() {
                   />
                 </g>
               </svg>
-              Gifs
+              <lol className="yeet">Gifs</lol>
             </Link>
           </li>
           <li className="mr-3">
             <Link
-              className="inline-flex rounded-full hover:text-gray-100 text-gray-700 dark:text-white dark:hover:bg-blue-300 hover:bg-purple-300 py-1 px-3 transition duration-150 font-normal hover:ring-4 focus:ring-4"
+              className="inline-flex rounded-full hover:text-gray-100 text-gray-700 dark:text-white transform hover:scale-110 py-1 px-3 transition duration-150 font-normal"
               to="/stickers"
               onClick={navigation}
             >
@@ -116,7 +116,7 @@ export default function Navigation() {
                   stroke-linejoin="round"
                 />
               </svg>
-              Stickers
+              <lol className="yeet">Stickers</lol>
             </Link>
           </li>
           <li className="mr-3">

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import Paginate from "./Pagination";
 import Loader from "./Loader";
 
 const Stickers = () => {
@@ -24,7 +24,7 @@ const Stickers = () => {
                 const results = await axios("https://api.giphy.com/v1/stickers/trending", {
                     params: {
                         api_key: "LYA2jGDHvyIkbB8KmweTmjlBbQhsX5Dw",
-                        limit: 30
+                        limit: 60
                     }
                 });
 
@@ -75,7 +75,7 @@ const Stickers = () => {
                 params: {
                     api_key: "LYA2jGDHvyIkbB8KmweTmjlBbQhsX5Dw",
                     q: search,
-                    limit: 12
+                    limit: 60
                 }
             });
             setData(results.data.data);
@@ -87,26 +87,26 @@ const Stickers = () => {
         setIsLoading(false);
     };
 
-    //    const pageSelected = pageNumber => {
-    //        setCurrentPage(pageNumber);
-    //    };
+    const pageSelected = pageNumber => {
+        setCurrentPage(pageNumber);
+    };
 
     return (
         <div className="flex flex-col h-4">
             {renderError()}
             <form className="pb-4 flex justify-center">
-                <div class="pt-2 relative mx-auto">
+                <div class="pt-2 relative mx-auto inline-flex">
                     <input
                         value={search}
                         onChange={handleSearchChange}
                         type="text"
                         placeholder="Search"
-                        className="border-2 border-purple-200 text-white dark:text-white hover:border-purple-200 dark:border-gray-600 placeholder-white dark:placeholder-white dark:bg-gray-800 focus:border-purple-200 dark:focus:border-blue-400 transition duration-150 transform hover:scale-110 bg-purple-300 h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none w-72"
+                        className="border-2 border-purple-200 text-white dark:text-white hover:border-purple-200 dark:border-gray-600 placeholder-white dark:placeholder-white dark:bg-gray-800 focus:border-purple-200 dark:focus:border-blue-400 transition duration-150 transform hover:scale-110 bg-purple-300 h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none w-72 "
                     />
                     <button
                         onClick={handleSubmit}
                         type="submit"
-                        className="absolute right-0 top-0 mt-5 mr-4"
+                        className="absolute right-0 top-0 mt-5 mr-4 hidden"
                     >
                         <svg class="h-4 w-4 fill-current" width="512px" height="512px" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M63.4534 67.7487L50.7249 55.0169C49.5542 53.8459 49.5544 51.9476 50.7252 50.7768C51.8963 49.6057 53.795 49.6058 54.9659 50.7771L67.6944 63.5089C68.865 64.6799 68.8649 66.5782 67.6941 67.749C66.523 68.9201 64.6243 68.92 63.4534 67.7487Z" fill="#F2C94C" />
@@ -115,11 +115,15 @@ const Stickers = () => {
                             <path d="M20.7417 33.9973C20.7416 35.1019 21.637 35.9973 22.7416 35.9974C23.8462 35.9975 24.7416 35.1021 24.7417 33.9975L20.7417 33.9973ZM28.3698 24.2497L29.3698 25.9818L28.3698 24.2497ZM33.9968 24.7417C35.1014 24.7416 35.9967 23.846 35.9966 22.7414C35.9964 21.6369 35.1009 20.7416 33.9963 20.7417L33.9968 24.7417ZM24.7417 33.9975C24.7419 30.6907 26.5061 27.6352 29.3698 25.9818L27.3698 22.5177C23.2685 24.8856 20.7419 29.2615 20.7417 33.9973L24.7417 33.9975ZM33.9963 20.7417C31.7086 20.742 29.42 21.334 27.3698 22.5177L29.3698 25.9818C30.8015 25.1552 32.3987 24.7419 33.9968 24.7417L33.9963 20.7417Z" fill="#F2F2F2" />
                         </svg>
                     </button>
+                    <Paginate
+                        pageSelected={pageSelected}
+                        currentPage={currentPage}
+                        itemsPerPage={itemsPerPage}
+                        totalItems={data.length}
+                    />
                 </div>
             </form>
-            <div className="grid gap-x-8 gap-y-4 grid-cols-3 bg-purple-300 dark:bg-gray-800 rounded p-2">
-                {renderGifs()}
-            </div>
+            <div className="grid gap-x-8 gap-y-4 grid-cols-3 bg-purple-300 dark:bg-gray-800 rounded p-2">{renderGifs()}</div>
         </div >
     );
 };
