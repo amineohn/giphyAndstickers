@@ -24,7 +24,7 @@ const Stickers = () => {
                 const results = await axios("https://api.giphy.com/v1/stickers/trending", {
                     params: {
                         api_key: "LYA2jGDHvyIkbB8KmweTmjlBbQhsX5Dw",
-                        limit: 60
+                        limit: 100
                     }
                 });
 

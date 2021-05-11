@@ -49,7 +49,7 @@ const Giphy = () => {
                 params: {
                     api_key: "LYA2jGDHvyIkbB8KmweTmjlBbQhsX5Dw",
                     q: search,
-                    limit: 60
+                    limit: 100
                 }
             });
             setData(results.data.data);
