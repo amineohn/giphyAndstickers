@@ -82,7 +82,6 @@ export default function Navigation() {
                   />
                 </g>
               </svg>
-              <lol className="yeet">Gifs</lol>
             </Link>
           </li>
           <li className="mr-3">
@@ -116,7 +115,6 @@ export default function Navigation() {
                   stroke-linejoin="round"
                 />
               </svg>
-              <lol className="yeet">Stickers</lol>
             </Link>
           </li>
           <li className="mr-3">
