@@ -1,25 +1,12 @@
-import ReactGiphySearchBox from "react-giphy-searchbox";
+import Giphy from "../components/Giphy";
 import Navigation from "../components/Navigation";
 export default function Home() {
   return (
     <>
-      <div className="pt-2 relative mx-auto text-gray-600 flex justify-center h-screen items-center flex-col">
+      <div className="pt-2 relative mx-auto text-gray-600 flex justify-center h-3/6 items-center flex-col">
         <Navigation />
-        <div className="scaleUpDown">
-          <ReactGiphySearchBox
-            messageNoMatches="No matches found."
-            imageRenditionName="original"
-            apiKey="LYA2jGDHvyIkbB8KmweTmjlBbQhsX5Dw"
-            masonryConfig={[
-              { columns: 2, imageWidth: 110, gutter: 5 },
-              {
-                mq: "700px",
-                columns: 3,
-                imageWidth: 110,
-                gutter: 5
-              },
-            ]}
-          />
+        <div className="scaleUpDown w-3/5">
+          <Giphy />
         </div>
       </div>
     </>

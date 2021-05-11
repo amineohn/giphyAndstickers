@@ -1,12 +1,12 @@
-import bye from "../assets/img/wats.gif";
+import Category from "../components/Category";
 import Navigation from "../components/Navigation";
 export default function Home() {
   return (
     <>
-      <div className="pt-2 relative mx-auto text-gray-600 dark:text-white flex justify-center h-screen items-center flex-col">
+      <div className="pt-2 relative mx-auto text-gray-600 flex justify-center h-3/6 items-center flex-col">
         <Navigation />
-        <div className="scaleUpDown">
-          <img className="rounded" src={bye} alt="" />
+        <div className="scaleUpDown w-3/5">
+          <Category />
         </div>
       </div>
     </>
