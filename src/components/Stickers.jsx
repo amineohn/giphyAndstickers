@@ -101,7 +101,7 @@ const Stickers = () => {
                         onChange={handleSearchChange}
                         type="text"
                         placeholder="Search"
-                        className="border-2 border-purple-200 text-white dark:text-white hover:border-purple-200 dark:border-gray-600 placeholder-white dark:placeholder-white dark:bg-gray-800 focus:border-purple-200 dark:focus:border-blue-400 transition duration-150 bg-purple-300 h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none w-72 "
+                        className="border-2 border-red-200 text-white dark:text-white hover:border-red-200 dark:border-gray-600 placeholder-white dark:placeholder-white dark:bg-gray-800 focus:border-red-200 dark:focus:border-blue-400 transition duration-150 bg-red-300 h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none w-72"
                     />
                     <button
                         onClick={handleSubmit}
@@ -123,7 +123,7 @@ const Stickers = () => {
                     />
                 </div>
             </form>
-            <div className="grid gap-x-8 gap-y-4 grid-cols-3 bg-purple-300 dark:bg-gray-800 rounded p-2">{renderGifs()}</div>
+            <div className="grid gap-x-8 gap-y-4 grid-cols-3 bg-red-300 dark:bg-gray-800 rounded p-2">{renderGifs()}</div>
         </div >
     );
 };

@@ -48,7 +48,7 @@ const Giphy = () => {
     };
     return (
         <div className="flex flex-col h-4">
-            <div className="grid gap-x-8 gap-y-4 grid-cols-3 bg-purple-300 dark:bg-gray-800 rounded p-2">{renderGifs()}</div>
+            <div className="grid gap-x-8 gap-y-4 grid-cols-3 bg-red-300 dark:bg-gray-800 rounded p-2">{renderGifs()}</div>
         </div >
     );
 };

@@ -8612,7 +8612,7 @@
 
 "postcss-color-rebeccapurple@^4.0.1":
   "integrity" "sha512-aAe3OhkS6qJXBbqzvZth2Au4V3KieR5sRQ4ptb2b2O8wgvB3SJBsdG+jsn2BZbbwekDG8nTfcCNKcSfe/lEy8g=="
-  "resolved" "https://registry.npmjs.org/postcss-color-rebeccapurple/-/postcss-color-rebeccapurple-4.0.1.tgz"
+  "resolved" "https://registry.npmjs.org/postcss-color-rebeccapurple/-/postcss-color-rebeccared-4.0.1.tgz"
   "version" "4.0.1"
   dependencies:
     "postcss" "^7.0.2"
