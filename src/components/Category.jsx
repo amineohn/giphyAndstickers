@@ -42,7 +42,7 @@ const Giphy = () => {
         }
         return currentItems.map(el => {
             return (
-                <img src={el.images.fixed_height.url} className="rounded" alt="" />
+                <img src={el.images.fixed_height.url} className="rounded scaleUpDown" alt="" />
             );
         });
     };

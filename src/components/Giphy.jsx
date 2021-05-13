@@ -21,7 +21,7 @@ const Giphy = () => {
         }
         return currentItems.map(el => {
             return (
-                <img src={el.images.fixed_height.url} className="rounded" alt="" />
+                <img src={el.images.fixed_height.url} className="rounded scaleUpDown" alt="" />
             );
         });
     };
@@ -75,7 +75,7 @@ const Giphy = () => {
                         onChange={handleSearchChange}
                         type="text"
                         placeholder="Search"
-                        className="border-2 border-purple-200 text-white dark:text-white hover:border-purple-200 dark:border-gray-600 placeholder-white dark:placeholder-white dark:bg-gray-800 focus:border-purple-200 dark:focus:border-blue-400 transition duration-150 transform hover:scale-110 bg-purple-300 h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none w-72 "
+                        className="border-2 border-purple-200 text-white dark:text-white hover:border-purple-200 dark:border-gray-600 placeholder-white dark:placeholder-white dark:bg-gray-800 focus:border-purple-200 dark:focus:border-blue-400 transition duration-150 bg-purple-300 h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none w-72 "
                     />
                     <button
                         onClick={handleSubmit}
