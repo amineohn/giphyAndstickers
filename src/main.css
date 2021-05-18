@@ -1,96 +1,164 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 body {
-  @apply transition-all duration-150 ease-in-out bg-blue-100 select-none dark:bg-gray-900;
+	@apply transition-all duration-150 ease-in-out bg-blue-100 select-none dark:bg-gray-900;
 }
+
 img,
 a,
 img::selection {
-  @apply: border-none outline-none bg-transparent	no-underline;
+	@apply: border-none outline-none bg-transparent no-underline;
 }
+
 .message {
-  @apply p-2 text-center text-white bg-blue-300 rounded dark:bg-gray-700;
-  -webkit-animation: scaleUpDown 0.5s ease both;
-  animation: scaleUpDown 0.5s ease both;
+	@apply p-2 text-center text-white bg-blue-300 rounded dark:bg-gray-700;
+	-webkit-animation-name: vanishIn;
+	animation-name: vanishIn;
 }
-.scaleUpDown {
-  -webkit-animation: scaleUpDown 0.5s ease both;
-  animation: scaleUpDown 0.5s ease both;
+
+.vanishIn {
+	-webkit-animation-name: vanishIn;
+	animation-name: vanishIn;
 }
-@-webkit-keyframes scaleUpDown {
-  from {
-    opacity: 0;
-    -webkit-transform: scale(1.2);
-  }
+
+@-webkit-keyframes vanishIn {
+	0% {
+		opacity: 0;
+		transform-origin: 50% 50%;
+		transform: scale(2, 2);
+		filter: blur(90px);
+	}
+	100% {
+		opacity: 1;
+		transform-origin: 50% 50%;
+		transform: scale(1, 1);
+		filter: blur(0px);
+	}
 }
-@keyframes scaleUpDown {
-  from {
-    opacity: 0;
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
-  }
+
+@keyframes vanishIn {
+	0% {
+		opacity: 0;
+		transform-origin: 50% 50%;
+		transform: scale(2, 2);
+		filter: blur(90px);
+	}
+	100% {
+		opacity: 1;
+		transform-origin: 50% 50%;
+		transform: scale(1, 1);
+		filter: blur(0px);
+	}
 }
+
+.slideUpReturn {
+	-webkit-animation-name: slideUpReturn;
+	animation-name: slideUpReturn;
+}
+
+@-webkit-keyframes slideUpReturn {
+	0% {
+		transform-origin: 0 0;
+		transform: translateY(-100%);
+	}
+	100% {
+		transform-origin: 0 0;
+		transform: translateY(0%);
+	}
+}
+
+@keyframes slideUpReturn {
+	0% {
+		transform-origin: 0 0;
+		transform: translateY(-100%);
+	}
+	100% {
+		transform-origin: 0 0;
+		transform: translateY(0%);
+	}
+}
+
 svg:before,
 svg:after {
-  -webkit-animation: scaleUpDown 0.5s ease both;
-  animation: scaleUpDown 0.5s ease both;
+	-webkit-animation: scaleUpDown 0.5s ease both;
+	animation: scaleUpDown 0.5s ease both;
 }
+
 .anim {
-  @apply transition-all duration-100 ease-in-out;
+	@apply transition-all duration-100 ease-in-out;
 }
+
 .coffee_cup {
-  width: 30px;
-  height: 34px;
-  border: 1px rgb(244, 244, 244) solid;
-  border-radius: 0px 0px 5px 5px;
-  position: relative;
-  margin: -40px auto;
+	width: 30px;
+	height: 34px;
+	border: 1px rgb(244, 244, 244) solid;
+	border-radius: 0px 0px 5px 5px;
+	position: relative;
+	margin: -40px auto;
 }
-.coffee_cup:after, .coffee_cup:before {
-  position: absolute;
-  content: "";
-}
-.coffee_cup:after {
-  width: 5px;
-  height: 12px;
-  border: 1.5px rgb(244, 244, 244) solid;
-  border-left-color: rgb(244, 244, 244);
-  border-left-style: solid;
-  border-left-width: 1.5px;
-  border-left: none;
-  border-radius: 0px 20px 20px 0px;
-  left: 30px;
-}
+
+.coffee_cup:after,
 .coffee_cup:before {
-  width: 1px;
-  height: 6px;
-  background-color: rgb(244, 244, 244);
-  top: -10px;
-  left: 8px;
-  box-shadow: 8px 0px 0px 0px rgb(244, 244, 244), 8px -8px 0px 0px rgb(244, 244, 244), 14px 0px 0px 0px rgb(244, 244, 244);
-  animation: steam 1s linear infinite alternate;
+	position: absolute;
+	content: "";
+}
+
+.coffee_cup:after {
+	width: 5px;
+	height: 12px;
+	border: 1.5px rgb(244, 244, 244) solid;
+	border-left-color: rgb(244, 244, 244);
+	border-left-style: solid;
+	border-left-width: 1.5px;
+	border-left: none;
+	border-radius: 0px 20px 20px 0px;
+	left: 30px;
+}
+
+.coffee_cup:before {
+	width: 1px;
+	height: 6px;
+	background-color: rgb(244, 244, 244);
+	top: -10px;
+	left: 8px;
+	box-shadow: 8px 0px 0px 0px rgb(244, 244, 244), 8px -8px 0px 0px rgb(244, 244, 244), 14px 0px 0px 0px rgb(244, 244, 244);
+	animation: steam 1s linear infinite alternate;
 }
 
 @-webkit-keyframes steam {
-  0%{height: 0px;}
-  100%{height: 6px;}
+	0% {
+		height: 0px;
+	}
+	100% {
+		height: 6px;
+	}
 }
+
 @-moz-keyframes steam {
-  0%{height: 0px}
-  100%{height: 6px;}
+	0% {
+		height: 0px
+	}
+	100% {
+		height: 6px;
+	}
 }
+
 @keyframes steam {
-  0%{height: 0px}
-  100%{height: 6px;}
+	0% {
+		height: 0px
+	}
+	100% {
+		height: 6px;
+	}
 }
 
 html {
-  overflow: scroll;
-  overflow-x: hidden;
+	overflow: scroll;
+	overflow-x: hidden;
 }
+
 ::-webkit-scrollbar {
-  width: 0;
-  background: transparent;
+	width: 0;
+	background: transparent;
 }
