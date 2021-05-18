@@ -12,7 +12,7 @@ const Paginate = props => {
             <div class="flex text-gray-700 dark:text-white">
                 <div class="flex h-8 font-medium rounded-full bg-red-200 dark:bg-gray-800">
                     {pageNumbers.map(number => {
-                        let classes = "";
+                        let classes = "bg-red-500";
                         if (number === props.currentPage) {
                             classes += "bg-red-600";
                         }

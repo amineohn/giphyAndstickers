@@ -12,11 +12,11 @@ export default function Navigation() {
   const [onSong] = useSound(on);
   return (
     <>
-      <div className="pb-4 inline-flex justify-end items-center flex-col fixed mt-80 px-4">
+      <div className="fixed inline-flex flex-col items-center justify-end px-4 pb-4 mt-80">
         <ul className="inline-block">
           <li className="mr-3">
             <Link
-              className="inline-flex rounded-full hover:text-gray-100 text-gray-700 dark:text-white transform hover:scale-110 py-1 px-3 transition duration-150 font-normal"
+              className="inline-flex px-3 py-1 font-normal text-gray-700 transition duration-150 transform rounded-full hover:text-gray-100 dark:text-white hover:scale-110"
               to="/"
               onClick={navigation}
             >
@@ -43,50 +43,7 @@ export default function Navigation() {
           </li>
           <li className="mr-3">
             <Link
-              className="inline-flex rounded-full hover:text-gray-100 text-gray-700 dark:text-white transform hover:scale-110 py-1 px-3 transition duration-150 font-normal"
-              to="/gifs"
-              onClick={navigation}
-            >
-              <svg
-                width="30"
-                height="30"
-                className="-mt-0.5"
-                viewBox="0 0 80 80"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M21 21C17.6863 21 15 23.6863 15 27L15 59C15 62.3137 17.6863 65 21 65H53C56.3137 65 59 62.3137 59 59L27 59C23.6863 59 21 56.3137 21 53L21 21Z"
-                  fill="#828282"
-                />
-                <g opacity="0.9">
-                  <rect
-                    x="21"
-                    y="15"
-                    width="44"
-                    height="44"
-                    rx="6"
-                    fill="#2F80ED"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M27 59L46 59L59 59C61.8222 59 64.1893 57.0515 64.8294 54.4264C64.905 54.1164 64.7952 53.7952 64.5696 53.5696L58.7071 47.7071C58.3166 47.3166 57.6834 47.3166 57.2929 47.7071L53.5212 51.4789C53.1186 51.8815 52.4616 51.8672 52.0769 51.4475L37.7372 35.8042C37.3408 35.3718 36.6592 35.3718 36.2629 35.8042L21.2628 52.1678C21.0938 52.3523 21 52.5934 21 52.8436V53C21 56.3137 23.6863 59 27 59Z"
-                    fill="#6FCF97"
-                  />
-                  <path
-                    d="M48.4019 22.5C50.0096 21.5718 51.9904 21.5718 53.5981 22.5C55.2058 23.4282 56.1962 25.1436 56.1962 27C56.1962 28.8564 55.2058 30.5718 53.5981 31.5C51.9904 32.4282 50.0096 32.4282 48.4019 31.5C46.7942 30.5718 45.8038 28.8564 45.8038 27C45.8038 25.1436 46.7942 23.4282 48.4019 22.5Z"
-                    fill="#F2C94C"
-                  />
-                </g>
-              </svg>
-            </Link>
-          </li>
-          <li className="mr-3">
-            <Link
-              className="inline-flex rounded-full hover:text-gray-100 text-gray-700 dark:text-white transform hover:scale-110 py-1 px-3 transition duration-150 font-normal"
+              className="inline-flex px-3 py-1 font-normal text-gray-700 transition duration-150 transform rounded-full hover:text-gray-100 dark:text-white hover:scale-110"
               to="/stickers"
               onClick={navigation}
             >
@@ -119,7 +76,7 @@ export default function Navigation() {
           </li>
           <li className="mr-3">
             <Link
-              className="inline-flex rounded-full hover:text-gray-100 text-gray-700 transform hover:scale-110 py-1 px-3 transition duration-150 font-normal"
+              className="inline-flex px-3 py-1 font-normal text-gray-700 transition duration-150 transform rounded-full hover:text-gray-100 hover:scale-110"
               onClick={() => setTheme(colorTheme)}
             >
               {colorTheme === "light" ? (

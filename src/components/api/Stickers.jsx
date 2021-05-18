@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Paginate from "./Pagination";
-import Loader from "./Loader";
+import Paginate from "../Pagination";
+import Loader from "../Loader";
 
-const Giphy = () => {
+const Stickers = () => {
     const [data, setData] = useState([]);
     const [search, setSearch] = useState("");
     const [isLoading, setIsLoading] = useState(false);
@@ -14,6 +14,32 @@ const Giphy = () => {
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            setIsError(false);
+            setIsLoading(true);
+
+            try {
+                const results = await axios("https://api.giphy.com/v1/stickers/trending", {
+                    params: {
+                        api_key: "LYA2jGDHvyIkbB8KmweTmjlBbQhsX5Dw",
+                        limit: 50
+                    }
+                });
+
+                console.log(results);
+                setData(results.data.data);
+            } catch (err) {
+                setIsError(true);
+                setTimeout(() => setIsError(false), 4000);
+            }
+
+            setIsLoading(false);
+        };
+
+        fetchData();
+    }, []);
 
     const renderGifs = () => {
         if (isLoading) {
@@ -45,11 +71,11 @@ const Giphy = () => {
         setIsLoading(true);
 
         try {
-            const results = await axios("https://api.giphy.com/v1/gifs/search", {
+            const results = await axios("https://api.giphy.com/v1/stickers/search", {
                 params: {
                     api_key: "LYA2jGDHvyIkbB8KmweTmjlBbQhsX5Dw",
                     q: search,
-                    limit: 100
+                    limit: 50
                 }
             });
             setData(results.data.data);
@@ -68,19 +94,19 @@ const Giphy = () => {
     return (
         <div className="flex flex-col h-4">
             {renderError()}
-            <form className="pb-4 flex justify-center">
+            <form className="flex justify-center pb-4">
                 <div class="pt-2 relative mx-auto inline-flex">
                     <input
                         value={search}
                         onChange={handleSearchChange}
                         type="text"
                         placeholder="Search"
-                        className="border-2 border-red-200 text-white dark:text-white hover:border-red-200 dark:border-gray-600 placeholder-white dark:placeholder-white dark:bg-gray-800 focus:border-red-200 dark:focus:border-blue-400 transition duration-150 bg-red-300 h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none w-72"
+                        className="h-10 px-5 pr-16 text-sm text-white placeholder-white transition duration-150 bg-red-300 border-2 border-red-200 rounded-lg dark:text-white hover:border-red-200 dark:border-gray-600 dark:placeholder-white dark:bg-gray-800 focus:border-red-200 dark:focus:border-blue-400 focus:outline-none w-72"
                     />
                     <button
                         onClick={handleSubmit}
                         type="submit"
-                        className="absolute right-0 top-0 mt-5 mr-4 hidden"
+                        className="absolute top-0 right-0 hidden mt-5 mr-4"
                     >
                         <svg class="h-4 w-4 fill-current" width="512px" height="512px" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M63.4534 67.7487L50.7249 55.0169C49.5542 53.8459 49.5544 51.9476 50.7252 50.7768C51.8963 49.6057 53.795 49.6058 54.9659 50.7771L67.6944 63.5089C68.865 64.6799 68.8649 66.5782 67.6941 67.749C66.523 68.9201 64.6243 68.92 63.4534 67.7487Z" fill="#F2C94C" />
@@ -97,9 +123,11 @@ const Giphy = () => {
                     />
                 </div>
             </form>
-            <div className="grid gap-x-8 gap-y-4 grid-cols-3 bg-red-300 dark:bg-gray-800 rounded p-2">{renderGifs()}</div>
+            <div className="flex flex-col items-center justify-center max-h-96">
+                <div className="grid grid-cols-3 p-2 overflow-auto bg-red-300 border-2 border-red-200 border-solid rounded dark:border-gray-600 gap-x-8 gap-y-4 dark:bg-gray-800">{renderGifs()}</div>
+            </div>
         </div >
     );
 };
 
-export default Giphy;
+export default Stickers;

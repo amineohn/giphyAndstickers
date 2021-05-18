@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-red-100 dark:bg-gray-900 transition-all duration-150 ease-in-out select-none;
+  @apply transition-all duration-150 ease-in-out bg-red-100 select-none dark:bg-gray-900;
 }
 img,
 a,
@@ -11,7 +11,7 @@ img::selection {
   @apply: border-none outline-none bg-transparent	no-underline;
 }
 .message {
-  @apply bg-red-300 dark:bg-gray-700 rounded text-white text-center p-2;
+  @apply p-2 text-center text-white bg-red-300 rounded dark:bg-gray-700;
   -webkit-animation: scaleUpDown 0.5s ease both;
   animation: scaleUpDown 0.5s ease both;
 }
@@ -40,45 +40,57 @@ svg:after {
 .anim {
   @apply transition-all duration-100 ease-in-out;
 }
+.coffee_cup {
+  width: 30px;
+  height: 34px;
+  border: 1px rgb(244, 244, 244) solid;
+  border-radius: 0px 0px 5px 5px;
+  position: relative;
+  margin: -40px auto;
+}
+.coffee_cup:after, .coffee_cup:before {
+  position: absolute;
+  content: "";
+}
+.coffee_cup:after {
+  width: 5px;
+  height: 12px;
+  border: 1.5px rgb(244, 244, 244) solid;
+  border-left-color: rgb(244, 244, 244);
+  border-left-style: solid;
+  border-left-width: 1.5px;
+  border-left: none;
+  border-radius: 0px 20px 20px 0px;
+  left: 30px;
+}
+.coffee_cup:before {
+  width: 1px;
+  height: 6px;
+  background-color: rgb(244, 244, 244);
+  top: -10px;
+  left: 8px;
+  box-shadow: 8px 0px 0px 0px rgb(244, 244, 244), 8px -8px 0px 0px rgb(244, 244, 244), 14px 0px 0px 0px rgb(244, 244, 244);
+  animation: steam 1s linear infinite alternate;
+}
 
-.lds-heart {
-  @apply: inline-block relative w-20 h-80 transform rotate-45;
-  transform-origin: 40px 40px;
+@-webkit-keyframes steam {
+  0%{height: 0px;}
+  100%{height: 6px;}
 }
-.lds-heart div {
-  @apply bg-red-500 dark:bg-blue-300 absolute w-8 h-8 top-8 left-8;
-  animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+@-moz-keyframes steam {
+  0%{height: 0px}
+  100%{height: 6px;}
 }
-.lds-heart div:after,
-.lds-heart div:before {
-  content: " ";
-  @apply bg-red-500 dark:bg-blue-300 absolute block w-8 h-8;
+@keyframes steam {
+  0%{height: 0px}
+  100%{height: 6px;}
 }
-.lds-heart div:before {
-  border-radius: 50% 0 0 50%;
-  @apply: -left-6;
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
 }
-.lds-heart div:after {
-  border-radius: 50% 50% 0 0;
-  @apply: -top-6;
-}
-@keyframes lds-heart {
-  0% {
-    transform: scale(0.95);
-  }
-  5% {
-    transform: scale(1.1);
-  }
-  39% {
-    transform: scale(0.85);
-  }
-  45% {
-    transform: scale(1);
-  }
-  60% {
-    transform: scale(0.95);
-  }
-  100% {
-    transform: scale(0.9);
-  }
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
 }
