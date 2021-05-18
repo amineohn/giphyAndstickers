@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Paginate from "../Pagination";
 import Loader from "../Loader";
-
+import config from "../../config.json";
 const Stickers = () => {
     const [data, setData] = useState([]);
     const [search, setSearch] = useState("");
@@ -21,10 +21,10 @@ const Stickers = () => {
             setIsLoading(true);
 
             try {
-                const results = await axios("https://api.giphy.com/v1/stickers/trending", {
+                const results = await axios(`${config.url}stickers/trending`, {
                     params: {
-                        api_key: "LYA2jGDHvyIkbB8KmweTmjlBbQhsX5Dw",
-                        limit: 50
+                        api_key: config.key,
+                        limit: config.limit
                     }
                 });
 
@@ -71,11 +71,11 @@ const Stickers = () => {
         setIsLoading(true);
 
         try {
-            const results = await axios("https://api.giphy.com/v1/stickers/search", {
+            const results = await axios(`${config.url}stickers/search`, {
                 params: {
-                    api_key: "LYA2jGDHvyIkbB8KmweTmjlBbQhsX5Dw",
+                    api_key: config.key,
                     q: search,
-                    limit: 50
+                    limit: config.limit
                 }
             });
             setData(results.data.data);

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Paginate from "../Pagination";
 import Loader from "../Loader";
+import config from "../../config.json";
 
 const Giphy = () => {
     const [data, setData] = useState([]);
@@ -21,10 +22,10 @@ const Giphy = () => {
             setIsLoading(true);
 
             try {
-                const results = await axios("https://api.giphy.com/v1/gifs/trending", {
+                const results = await axios(`${config.url}gifs/trending`, {
                     params: {
-                        api_key: "LYA2jGDHvyIkbB8KmweTmjlBbQhsX5Dw",
-                        limit: 50
+                        api_key: config.key,
+                        limit: config.limit
                     }
                 });
 
@@ -70,7 +71,7 @@ const Giphy = () => {
         setIsLoading(true);
 
         try {
-            const results = await axios("https://api.giphy.com/v1/gifs/search", {
+            const results = await axios(`${config.url}gifs/search`, {
                 params: {
                     api_key: "LYA2jGDHvyIkbB8KmweTmjlBbQhsX5Dw",
                     q: search,
