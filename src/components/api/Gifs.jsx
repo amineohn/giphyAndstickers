@@ -4,7 +4,7 @@ import Paginate from "../Pagination";
 import Loader from "../Loader";
 import config from "../../config.json";
 
-const Giphy = () => {
+const Gifs = () => {
     const [data, setData] = useState([]);
     const [search, setSearch] = useState("");
     const [isLoading, setIsLoading] = useState(false);
@@ -130,4 +130,4 @@ const Giphy = () => {
     );
 };
 
-export default Giphy;
+export default Gifs;
