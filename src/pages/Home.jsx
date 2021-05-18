@@ -1,6 +1,6 @@
 import Gifs from "../components/api/Gifs";
 import Navigation from "../components/Navigation";
-export default function Home() {
+export default Home = () => {
   return (
     <>
       <Navigation />

@@ -1,6 +1,6 @@
 import Navigation from "../components/Navigation";
 import Stickers from "../components/api/Stickers";
-export default function Sticker() {
+export default Stickers = () => {
   return (
     <>
       <Navigation />
