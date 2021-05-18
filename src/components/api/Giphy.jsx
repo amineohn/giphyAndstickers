@@ -100,7 +100,7 @@ const Giphy = () => {
                         onChange={handleSearchChange}
                         type="text"
                         placeholder="Search"
-                        className="h-10 px-5 pr-16 text-sm text-white placeholder-white transition duration-150 bg-red-300 border-2 border-red-200 rounded-lg dark:text-white hover:border-red-200 dark:border-gray-600 dark:placeholder-white dark:bg-gray-800 focus:border-red-200 dark:focus:border-blue-400 focus:outline-none w-72"
+                        className="h-10 px-5 pr-16 text-sm text-white placeholder-white transition duration-150 bg-blue-300 border-2 border-blue-200 rounded-lg dark:text-white hover:border-blue-200 dark:border-gray-600 dark:placeholder-white dark:bg-gray-800 focus:border-blue-200 dark:focus:border-blue-400 focus:outline-none w-72"
                     />
                     <button
                         onClick={handleSubmit}
@@ -123,7 +123,7 @@ const Giphy = () => {
                 </div>
             </form>
             <div className="flex flex-col items-center justify-center max-h-96">
-                <div className="grid grid-cols-3 p-2 overflow-auto bg-red-300 border-2 border-red-200 border-solid rounded dark:border-gray-600 gap-x-8 gap-y-4 dark:bg-gray-800">{renderGifs()}</div>
+                <div className="grid grid-cols-3 p-2 overflow-auto bg-blue-300 border-2 border-blue-200 border-solid rounded dark:border-gray-600 gap-x-8 gap-y-4 dark:bg-gray-800">{renderGifs()}</div>
             </div>
         </div >
     );

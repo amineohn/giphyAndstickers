@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply transition-all duration-150 ease-in-out bg-red-100 select-none dark:bg-gray-900;
+  @apply transition-all duration-150 ease-in-out bg-blue-100 select-none dark:bg-gray-900;
 }
 img,
 a,
@@ -11,7 +11,7 @@ img::selection {
   @apply: border-none outline-none bg-transparent	no-underline;
 }
 .message {
-  @apply p-2 text-center text-white bg-red-300 rounded dark:bg-gray-700;
+  @apply p-2 text-center text-white bg-blue-300 rounded dark:bg-gray-700;
   -webkit-animation: scaleUpDown 0.5s ease both;
   animation: scaleUpDown 0.5s ease both;
 }
